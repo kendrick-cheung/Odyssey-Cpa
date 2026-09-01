@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Odyssey Chartered Professional Accountants | Victoria, BC</title>
+<meta name="description" content="Odyssey Chartered Professional Accountants provides tax, accounting, and advisory services to businesses and individuals in Victoria, BC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #1B2A3A;
+    --paper: #EFECE3;
+    --paper-raised: #F7F5EE;
+    --rule: #C7C0AC;
+    --green: #3C5A44;
+    --green-deep: #2A4032;
+    --brass: #A9822E;
+    --white: #FDFCF9;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .display{
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    line-height: 1.12;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  a{ color: inherit; }
+
+  :focus-visible{
+    outline: 2px solid var(--brass);
+    outline-offset: 3px;
+  }
+
+  .wrap{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  @media (max-width: 640px){
+    .wrap{ padding: 0 20px; }
+    body{ font-size: 16px; }
+  }
+
+  /* ---------- Header ---------- */
+  header{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .header-inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 32px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  .wordmark{
+    font-family: 'Newsreader', serif;
+    font-size: 22px;
+    font-style: italic;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+  }
+  nav{
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  nav a{
+    text-decoration: none;
+    font-size: 15px;
+    color: var(--ink);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+  }
+  nav a:hover{ border-bottom-color: var(--green); }
+  .nav-phone{
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    color: var(--green-deep);
+  }
+  @media (max-width: 780px){
+    nav a:not(.nav-phone){ display: none; }
+    .header-inner{ padding: 16px 20px; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 90px 0 70px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 64px;
+    align-items: end;
+  }
+  .hero h1{
+    font-size: clamp(38px, 5vw, 58px);
+    max-width: 15ch;
+  }
+  .hero-sub{
+    margin-top: 24px;
+    max-width: 46ch;
+    font-size: 18px;
+    color: #3C4B5A;
+  }
+  .hero-actions{
+    margin-top: 36px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn{
+    display: inline-block;
+    background: var(--green-deep);
+    color: var(--white);
+    text-decoration: none;
+    padding: 14px 26px;
+    font-size: 15px;
+    border: 1px solid var(--green-deep);
+  }
+  .btn:hover{ background: var(--green); }
+  .btn-ghost{
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--ink);
+  }
+  .btn-ghost:hover{ border-color: var(--green); color: var(--green-deep); }
+
+  .hero-margin{
+    border-left: 1px solid var(--rule);
+    padding-left: 32px;
+  }
+  .hero-margin dl{ margin: 0; }
+  .hero-margin dt{
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--green-deep);
+    margin-bottom: 6px;
+  }
+  .hero-margin dd{
+    margin: 0 0 26px 0;
+    font-size: 15px;
+    color: #3C4B5A;
+  }
+  .hero-margin dd:last-child{ margin-bottom: 0; }
+
+  @media (max-width: 860px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero-margin{
+      border-left: none;
+      border-top: 1px solid var(--rule);
+      padding-left: 0;
+      padding-top: 28px;
+    }
+  }
+
+  /* ---------- Section scaffolding ---------- */
+  section{ padding: 80px 0; }
+  .section-head{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin-bottom: 48px;
+  }
+  .section-head h2{ font-size: clamp(28px, 3.4vw, 36px); }
+  .section-head p{
+    color: #3C4B5A;
+    max-width: 52ch;
+    margin: 0;
+  }
+  @media (max-width: 700px){
+    .section-head{ grid-template-columns: 1fr; gap: 14px; }
+  }
+
+  /* ---------- Services ledger ---------- */
+  .services{ background: var(--paper-raised); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+
+  .category{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    padding: 40px 0;
+    border-top: 1px solid var(--rule);
+  }
+  .category:first-of-type{ border-top: none; }
+
+  .category-label h3{
+    font-size: 22px;
+    font-style: italic;
+  }
+  .category-label p{
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #5B6572;
+    max-width: 30ch;
+  }
+
+  .service-row{
+    display: grid;
+    grid-template-columns: minmax(180px, 240px) 1fr;
+    gap: 24px;
+    padding: 18px 0;
+    border-top: 1px solid #DEDACB;
+  }
+  .service-row:first-child{ border-top: none; padding-top: 0; }
+  .service-row h4{
+    font-family: 'Newsreader', serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 0;
+  }
+  .service-row p{
+    margin: 0;
+    font-size: 15px;
+    color: #3C4B5A;
+  }
+
+  @media (max-width: 700px){
+    .category{ grid-template-columns: 1fr; gap: 16px; }
+    .service-row{ grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  /* ---------- Why Odyssey ---------- */
+  .why-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .why-item{
+    background: var(--paper);
+    padding: 32px;
+  }
+  .why-item h3{
+    font-size: 19px;
+    margin-bottom: 10px;
+  }
+  .why-item p{
+    margin: 0;
+    font-size: 15px;
+    color: #3C4B5A;
+  }
+  @media (max-width: 700px){
+    .why-list{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Partner ---------- */
+  .partner{
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-raised);
+  }
+  .partner-grid{
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .monogram{
+    width: 140px;
+    height: 140px;
+    border: 1px solid var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 44px;
+    color: var(--green-deep);
+  }
+  .partner h3{ font-size: 26px; }
+  .partner .role{
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    color: var(--green-deep);
+    margin: 6px 0 18px;
+  }
+  .partner p{
+    max-width: 60ch;
+    color: #3C4B5A;
+  }
+  @media (max-width: 600px){
+    .partner-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Contact / footer ---------- */
+  footer{
+    background: var(--ink);
+    color: var(--paper);
+    padding: 70px 0 40px;
+  }
+  .footer-top{
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #34455A;
+  }
+  footer h2{
+    color: var(--white);
+    font-size: clamp(30px, 4vw, 42px);
+    max-width: 12ch;
+  }
+  footer .btn{
+    margin-top: 28px;
+    background: var(--brass);
+    border-color: var(--brass);
+    color: var(--ink);
+  }
+  footer .btn:hover{ background: #C29A3E; }
+
+  .contact-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 32px;
+  }
+  .contact-item dt{
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    color: #B9C4CE;
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .contact-item dd{
+    margin: 0;
+    font-size: 16px;
+  }
+  .contact-item a{ text-decoration: none; }
+  .contact-item a:hover{ text-decoration: underline; }
+
+  .footer-bottom{
+    padding-top: 28px;
+    font-size: 13px;
+    color: #90A0AD;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  @media (max-width: 700px){
+    .footer-top{ grid-template-columns: 1fr; gap: 36px; }
+    .contact-grid{ grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#top" class="wordmark">Odyssey CPA</a>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#why">Why Odyssey</a>
+      <a href="#partner">Our CPA</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+12368960788" class="nav-phone">236&nbsp;896&nbsp;0788</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>Chartered accountants for businesses that plan on being here a while.</h1>
+        <p class="hero-sub">Odyssey is a Victoria, BC accounting firm built on one idea: your success and ours are the same thing. We handle the numbers with the technical rigour you'd expect from a CPA firm, and the personal attention you'd expect from a partner.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn">Start a conversation</a>
+          <a href="#services" class="btn btn-ghost">See what we do</a>
+        </div>
+      </div>
+      <div class="hero-margin">
+        <dl>
+          <dt>Based in</dt>
+          <dd>Victoria, BC — serving owner-managed businesses and individuals across Vancouver Island.</dd>
+          <dt>Led by</dt>
+          <dd>Kendrick Cheung, CPA, CGA</dd>
+          <dt>How we work</dt>
+          <dd>Close, personalized attention backed by ongoing professional education and current technology.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>What we do</h2>
+        <p>Thirteen services, four kinds of problems. Whether you need your books kept straight, your tax filed correctly, or a plan for what happens when you sell the business — this is where each service fits.</p>
+      </div>
+
+      <div class="category">
+        <div class="category-label">
+          <h3>Tax</h3>
+          <p>Filing correctly, and planning ahead so there are fewer surprises.</p>
+        </div>
+        <div>
+          <div class="service-row">
+            <h4>Corporate &amp; personal tax</h4>
+            <p>Preparation and filing for your company and your personal return, coordinated so one doesn't create a problem for the other.</p>
+          </div>
+          <div class="service-row">
+            <h4>Tax planning &amp; consulting</h4>
+            <p>Structuring income, compensation, and transactions ahead of time to legally reduce what you owe — not just reporting after the fact.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="category-label">
+          <h3>Accounting &amp; bookkeeping</h3>
+          <p>The ongoing record-keeping that everything else depends on.</p>
+        </div>
+        <div>
+          <div class="service-row">
+            <h4>Bookkeeping</h4>
+            <p>Day-to-day recording of income, expenses, and reconciliations, kept current so you always know where you stand.</p>
+          </div>
+          <div class="service-row">
+            <h4>Accounting &amp; financial reporting</h4>
+            <p>Turning your bookkeeping into accurate financial records that meet the standards lenders, investors, and regulators expect.</p>
+          </div>
+          <div class="service-row">
+            <h4>Financial statements</h4>
+            <p>Compiled, review, or audit-level statements prepared to the standard your bank, shareholders, or the CRA require.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="category-label">
+          <h3>Growth &amp; transactions</h3>
+          <p>Support at the specific moments when a business changes hands or changes shape.</p>
+        </div>
+        <div>
+          <div class="service-row">
+            <h4>Business startup</h4>
+            <p>Choosing the right structure, registering the entity, and setting up accounting systems correctly from day one.</p>
+          </div>
+          <div class="service-row">
+            <h4>Business valuations</h4>
+            <p>An independent, defensible estimate of what a business is worth — for a sale, a dispute, a divorce, or a shareholder buyout.</p>
+          </div>
+          <div class="service-row">
+            <h4>Purchase &amp; sale of business</h4>
+            <p>Financial due diligence and deal structuring so you understand exactly what you're buying or giving up before you sign.</p>
+          </div>
+          <div class="service-row">
+            <h4>Bank financing</h4>
+            <p>Preparing the financial package and projections lenders ask for, and presenting your business in the best possible light.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="category">
+        <div class="category-label">
+          <h3>Advisory &amp; planning</h3>
+          <p>Longer-range thinking about where the business, and your estate, are headed.</p>
+        </div>
+        <div>
+          <div class="service-row">
+            <h4>Management consulting</h4>
+            <p>Practical advice on the operational and financial decisions behind the scenes — pricing, margins, staffing, systems.</p>
+          </div>
+          <div class="service-row">
+            <h4>Financial consulting</h4>
+            <p>A clear read on your financial position and options, when you need an outside, numbers-first opinion.</p>
+          </div>
+          <div class="service-row">
+            <h4>Strategic planning</h4>
+            <p>Turning a business goal into a financial plan with the milestones and numbers to check it's actually working.</p>
+          </div>
+          <div class="service-row">
+            <h4>Estate &amp; succession planning</h4>
+            <p>Planning who takes over the business, or the wealth, and structuring it to minimize tax and avoid disputes later.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Why Odyssey</h2>
+        <p>The philosophy behind the services, in plain terms.</p>
+      </div>
+      <div class="why-list">
+        <div class="why-item">
+          <h3>Every client is a partner</h3>
+          <p>We measure our success by yours. That means advice suited to your actual situation, not a generic checklist.</p>
+        </div>
+        <div class="why-item">
+          <h3>Close, personal attention</h3>
+          <p>You work directly with people who know your file — not a rotating queue of unfamiliar contacts.</p>
+        </div>
+        <div class="why-item">
+          <h3>Technical depth, kept current</h3>
+          <p>Ongoing professional education means the advice you get reflects current tax rules and standards, not last decade's.</p>
+        </div>
+        <div class="why-item">
+          <h3>Modern tools, real networks</h3>
+          <p>Current technology and established business connections, put to work for practical outcomes rather than shown off for their own sake.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="partner" id="partner">
+    <div class="wrap partner-grid">
+      <div class="monogram">KC</div>
+      <div>
+        <h3>Kendrick Cheung</h3>
+        <p class="role">CPA, CGA</p>
+        <p>Our firm has the experience and knowledge to help with the full range of accounting needs above — from routine bookkeeping to the financial detail behind buying, selling, or planning the future of a business.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <h2>Let's work together.</h2>
+        <p style="color:#B9C4CE; max-width:42ch;">Tell us what you're working on, and we'll tell you how we can help.</p>
+        <a href="tel:+12368960788" class="btn">Call 236&nbsp;896&nbsp;0788</a>
+      </div>
+      <dl class="contact-grid">
+        <div class="contact-item">
+          <dt>Mailing address</dt>
+          <dd>Unit 201, 300 Gorge Road West,<br>Victoria, BC V9A 1M8</dd>
+        </div>
+        <div class="contact-item">
+          <dt>Phone</dt>
+          <dd><a href="tel:+12368960788">+1&nbsp;236&nbsp;896&nbsp;0788</a></dd>
+        </div>
+        <div class="contact-item">
+          <dt>Office hours</dt>
+          <dd>Monday to Friday, 9:00 AM–5:00 PM<br>Except statutory holidays</dd>
+        </div>
+        <div class="contact-item">
+          <dt>Email</dt>
+          <dd><a href="mailto:Admin@odycpa.ca">Admin@odycpa.ca</a></dd>
+        </div>
+      </dl>
+    </div>
+    <div class="footer-bottom">
+      <span>Odyssey Chartered Professional Accountants</span>
+      <span>Victoria, BC</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
